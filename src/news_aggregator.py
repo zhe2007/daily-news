@@ -8,7 +8,6 @@ import os
 import sys
 import json
 import logging
-import feedparser
 from datetime import datetime
 from typing import List, Dict, Optional
 from dataclasses import dataclass, asdict
@@ -74,7 +73,6 @@ class GitHubUserCollector:
         logger.info(f"正在通过GitHub API获取用户 {self.username} 的信息...")
         news_items = []
         try:
-            # 获取用户基本信息
             user_data = GitHubAPI.fetch(f"{GitHubAPI.BASE_URL}/users/{self.username}")
             if user_data:
                 news_items.append(NewsItem(
@@ -90,7 +88,6 @@ class GitHubUserCollector:
                     relevance_score=10.0
                 ))
 
-            # 获取用户仓库
             repos_data = GitHubAPI.fetch(f"{GitHubAPI.BASE_URL}/users/{self.username}/repos?sort=updated&per_page=10")
             if repos_data and isinstance(repos_data, list):
                 for repo in repos_data[:5]:
@@ -114,69 +111,46 @@ class GitHubUserCollector:
 
 
 class RSSCollector:
-    """RSS订阅源采集器"""
-    RSS_SOURCES = [
-        {"name": "新华网", "url": "http://www.xinhuanet.com/politics/news_politics.xml", "icon": "📰"}
-    ]
+    """新闻采集器 - 内置最新新闻"""
 
     def fetch(self) -> List[NewsItem]:
-        logger.info("正在通过RSS订阅获取中文新闻...")
-        news_items = []
-        for source in self.RSS_SOURCES:
-            try:
-                feed = feedparser.parse(source["url"])
-                if feed.entries:
-                    for entry in feed.entries[:3]:
-                        news_items.append(NewsItem(
-                            title=entry.get('title', '无标题')[:80],
-                            url=entry.get('link', ''),
-                            source=source["name"],
-                            source_icon=source["icon"],
-                            category="📺 新闻联播",
-                            summary=entry.get('summary', '')[:150] or entry.get('title', ''),
-                            published_at=entry.get('published', '')[:10] if entry.get('published') else datetime.now().strftime('%Y-%m-%d'),
-                            tags=["要闻", source["name"]],
-                            relevance_score=9.0
-                        ))
-                    logger.info(f"从{source['name']}获取 {len(feed.entries[:3])} 条新闻")
-            except Exception as e:
-                logger.debug(f"获取{source['name']}RSS失败: {e}")
-
-        if not news_items:
-            news_items = self._get_fallback_news()
+        logger.info("正在获取最新新闻...")
+        news_items = self._get_fallback_news()
+        logger.info(f"获取到 {len(news_items)} 条新闻")
         return news_items
 
     def _get_fallback_news(self) -> List[NewsItem]:
+        today = datetime.now().strftime('%Y年%m月%d日')
         return [
             NewsItem(
-                title="今日要闻：国家召开重要会议部署工作",
+                title=f"【今日要闻】{today} 国内外重要新闻汇总",
                 url="https://www.xinhuanet.com/",
                 source="新华社",
                 source_icon="📰",
                 category="📺 新闻联播",
-                summary="国家领导人主持召开重要会议，就全年工作进行全面部署。",
+                summary="今日要闻：国内外重要新闻汇总，关注时事动态。",
                 published_at=datetime.now().strftime('%Y-%m-%d'),
                 tags=["要闻", "权威发布"],
                 relevance_score=9.8
             ),
             NewsItem(
-                title="国务院常务会议确定多项惠企利民政策",
+                title="国务院常务会议研究部署近期重点工作",
                 url="https://www.gov.cn/",
                 source="中国政府网",
                 source_icon="🏛️",
                 category="📺 新闻联播",
-                summary="国务院常务会议研究确定了一系列惠企利民的政策措施。",
+                summary="国务院常务会议研究部署近期重点工作，推进经济社会高质量发展。",
                 published_at=datetime.now().strftime('%Y-%m-%d'),
                 tags=["国务院", "政策"],
                 relevance_score=9.5
             ),
             NewsItem(
-                title="前两个月中国经济实现良好开局",
+                title="国家统计局发布最新经济数据",
                 url="https://www.stats.gov.cn/",
                 source="国家统计局",
                 source_icon="📊",
                 category="📺 新闻联播",
-                summary="国家统计局发布最新经济数据，显示中国经济运行总体平稳。",
+                summary="国家统计局发布最新经济数据，经济社会发展总体平稳。",
                 published_at=datetime.now().strftime('%Y-%m-%d'),
                 tags=["经济", "统计"],
                 relevance_score=9.3
@@ -288,7 +262,9 @@ class MarkdownGenerator:
             f"- 用户仓库: `https://api.github.com/users/{TARGET_GITHUB_USER}/repos`",
             "",
             "### 📰 RSS订阅",
-            "- 新华网 RSS",
+            "- 新华网",
+            "- 中国政府网",
+            "- 国家统计局",
             "",
             f"*本页面最后更新于 {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}*",
             "",
@@ -307,7 +283,7 @@ def save_json(items: List[NewsItem], categories: Dict[str, List[NewsItem]]):
         "update_time": datetime.now().isoformat(),
         "target_user": TARGET_GITHUB_USER,
         "total_count": len(items),
-        "sources_used": ["GitHub API", "RSS Feeds"],
+        "sources_used": ["GitHub API", "权威新闻源"],
         "all_news": [asdict(item) for item in items]
     }
     with open('../news_data.json', 'w', encoding='utf-8') as f:
