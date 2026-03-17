@@ -1,0 +1,116 @@
+{
+  "update_time": "2026-03-17T10:06:33.416496",
+  "target_user": "zhe2007",
+  "total_count": 7,
+  "sources_used": [
+    "GitHub API",
+    "RSS Feeds"
+  ],
+  "all_news": [
+    {
+      "title": "GitHub用户: zhe2007",
+      "url": "https://github.com/zhe2007",
+      "source": "GitHub",
+      "source_icon": "🐙",
+      "category": "👤 GitHub用户",
+      "summary": "类型: User | 创建于: 2025-06-12",
+      "published_at": "2026-03-17",
+      "tags": [
+        "GitHub",
+        "个人主页"
+      ],
+      "stars": 3,
+      "relevance_score": 10.0
+    },
+    {
+      "title": "微视频｜“新”在中国",
+      "url": "http://www.news.cn/politics/2022-12/14/c_1129207254.htm",
+      "source": "新华网",
+      "source_icon": "📰",
+      "category": "📺 新闻联播",
+      "summary": "<a href=\"http://www.news.cn/politics/2022-12/14/c_1129207254.htm\">新时代的中国，日新月异。</a>",
+      "published_at": "2026-03-17",
+      "tags": [
+        "要闻",
+        "新华网"
+      ],
+      "stars": null,
+      "relevance_score": 9.0
+    },
+    {
+      "title": "疫情防控措施优化 各地复商复市进行时",
+      "url": "http://www.news.cn/politics/2022-12/14/c_1129207168.htm",
+      "source": "新华网",
+      "source_icon": "📰",
+      "category": "📺 新闻联播",
+      "summary": "<a href=\"http://www.news.cn/politics/2022-12/14/c_1129207168.htm\">近日，全国多地加大复商复市力度，有序恢复正常生产生活秩序。</a>",
+      "published_at": "2026-03-17",
+      "tags": [
+        "要闻",
+        "新华网"
+      ],
+      "stars": null,
+      "relevance_score": 9.0
+    },
+    {
+      "title": "国家卫健委发布新冠病毒疫苗第二剂次加强免疫接种实施方案",
+      "url": "http://www.news.cn/politics/2022-12/14/c_1129207117.htm",
+      "source": "新华网",
+      "source_icon": "📰",
+      "category": "📺 新闻联播",
+      "summary": "<a href=\"http://www.news.cn/politics/2022-12/14/c_1129207117.htm\">为深入贯彻落实党中央、国务院决策部署，进一步做好新冠肺炎疫情应对工作，保障人民群众生命安全和身体健康，经研究，现提出新冠病毒疫苗第二剂次加强免疫接种实施方案。</a>",
+      "published_at": "2026-03-17",
+      "tags": [
+        "要闻",
+        "新华网"
+      ],
+      "stars": null,
+      "relevance_score": 9.0
+    },
+    {
+      "title": "daily-news",
+      "url": "https://github.com/zhe2007/daily-news",
+      "source": "GitHub",
+      "source_icon": "🐙",
+      "category": "📦 仓库更新",
+      "summary": "暂无描述",
+      "published_at": "2026-03-17",
+      "tags": [
+        "Python",
+        "仓库"
+      ],
+      "stars": 0,
+      "relevance_score": 8.0
+    },
+    {
+      "title": "daily-summary",
+      "url": "https://github.com/zhe2007/daily-summary",
+      "source": "GitHub",
+      "source_icon": "🐙",
+      "category": "📦 仓库更新",
+      "summary": "我的每日总结记录",
+      "published_at": "2026-03-17",
+      "tags": [
+        "Python",
+        "仓库"
+      ],
+      "stars": 1,
+      "relevance_score": 8.0
+    },
+    {
+      "title": "-",
+      "url": "https://github.com/zhe2007/-",
+      "source": "GitHub",
+      "source_icon": "🐙",
+      "category": "📦 仓库更新",
+      "summary": "用于学习ctf，csapp,c++,python,php等",
+      "published_at": "2025-10-14",
+      "tags": [
+        "代码",
+        "仓库"
+      ],
+      "stars": 1,
+      "relevance_score": 8.0
+    }
+  ]
+}
