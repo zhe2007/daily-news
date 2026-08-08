@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-08-07T02:09:37.837028",
+  "update_time": "2026-08-08T00:56:42.565466",
   "target_user": "zhe2007",
   "total_count": 7,
   "sources_used": [
@@ -14,7 +14,7 @@
       "source_icon": "🐙",
       "category": "👤 GitHub用户",
       "summary": "类型: User | 创建于: 2025-06-12",
-      "published_at": "2026-08-07",
+      "published_at": "2026-08-08",
       "tags": [
         "GitHub",
         "个人主页"
@@ -23,13 +23,13 @@
       "relevance_score": 10.0
     },
     {
-      "title": "【今日要闻】2026年08月07日 国内外重要新闻汇总",
+      "title": "【今日要闻】2026年08月08日 国内外重要新闻汇总",
       "url": "https://www.xinhuanet.com/",
       "source": "新华社",
       "source_icon": "📰",
       "category": "📺 新闻联播",
       "summary": "今日要闻：国内外重要新闻汇总，关注时事动态。",
-      "published_at": "2026-08-07",
+      "published_at": "2026-08-08",
       "tags": [
         "要闻",
         "权威发布"
@@ -44,7 +44,7 @@
       "source_icon": "🏛️",
       "category": "📺 新闻联播",
       "summary": "国务院常务会议研究部署近期重点工作，推进经济社会高质量发展。",
-      "published_at": "2026-08-07",
+      "published_at": "2026-08-08",
       "tags": [
         "国务院",
         "政策"
@@ -59,7 +59,7 @@
       "source_icon": "📊",
       "category": "📺 新闻联播",
       "summary": "国家统计局发布最新经济数据，经济社会发展总体平稳。",
-      "published_at": "2026-08-07",
+      "published_at": "2026-08-08",
       "tags": [
         "经济",
         "统计"
@@ -68,33 +68,33 @@
       "relevance_score": 9.3
     },
     {
-      "title": "daily-news",
-      "url": "https://github.com/zhe2007/daily-news",
-      "source": "GitHub",
-      "source_icon": "🐙",
-      "category": "📦 仓库更新",
-      "summary": "暂无描述",
-      "published_at": "2026-08-06",
-      "tags": [
-        "Python",
-        "仓库"
-      ],
-      "stars": 0,
-      "relevance_score": 8.0
-    },
-    {
       "title": "daily-summary",
       "url": "https://github.com/zhe2007/daily-summary",
       "source": "GitHub",
       "source_icon": "🐙",
       "category": "📦 仓库更新",
       "summary": "我的每日总结记录",
-      "published_at": "2026-08-05",
+      "published_at": "2026-08-07",
       "tags": [
         "Python",
         "仓库"
       ],
       "stars": 1,
+      "relevance_score": 8.0
+    },
+    {
+      "title": "daily-news",
+      "url": "https://github.com/zhe2007/daily-news",
+      "source": "GitHub",
+      "source_icon": "🐙",
+      "category": "📦 仓库更新",
+      "summary": "暂无描述",
+      "published_at": "2026-08-07",
+      "tags": [
+        "Python",
+        "仓库"
+      ],
+      "stars": 0,
       "relevance_score": 8.0
     },
     {
